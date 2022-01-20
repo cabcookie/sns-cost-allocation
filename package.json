@@ -2,11 +2,8 @@
   "name": "sns-cost-allocation",
   "version": "0.0.3",
   "description": "Build a solution to allocate costs for text messages to callers.",
-  "main": "index.js",
-  "scripts": {
-    "push": "git push --follow-tags origin main",
-    "release": "standard-version",
-    "major-release": "standard-version --release-as major"
+  "bin": {
+    "sns-cost-allocation": "bin/sns-cost-allocation.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +20,29 @@
     "url": "https://github.com/cabcookie/sns-cost-allocation/issues"
   },
   "homepage": "https://github.com/cabcookie/sns-cost-allocation#readme",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest",
+    "cdk": "cdk",
+    "push": "git push --follow-tags origin main",
+    "release": "standard-version",
+    "major-release": "standard-version --release-as major"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.10",
+    "@types/node": "10.17.27",
+    "jest": "^26.4.2",
+    "ts-jest": "^26.2.0",
+    "aws-cdk": "2.8.0",
+    "standard-version": "^9.3.2",
+    "ts-node": "^9.0.0",
+    "typescript": "~3.9.7"
+  },
   "dependencies": {
+    "aws-cdk-lib": "2.8.0",
     "aws-sdk": "^2.1060.0",
-    "standard-version": "^9.3.2"
+    "constructs": "^10.0.0",
+    "source-map-support": "^0.5.16"
   }
 }
