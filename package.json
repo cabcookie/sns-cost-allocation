@@ -4,7 +4,9 @@
   "description": "Build a solution to allocate costs for text messages to callers.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "push": "git push --follow-tags origin main",
+    "release": "standard-version",
+    "major-release": "standard-version --release-as major"
   },
   "repository": {
     "type": "git",
@@ -13,12 +15,15 @@
   "keywords": [
     "AWS",
     "SNS",
-    "Cost"
+    "Cost Management"
   ],
   "author": "Carsten Koch",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/cabcookie/sns-cost-allocation/issues"
   },
-  "homepage": "https://github.com/cabcookie/sns-cost-allocation#readme"
+  "homepage": "https://github.com/cabcookie/sns-cost-allocation#readme",
+  "dependencies": {
+    "standard-version": "^9.3.2"
+  }
 }
