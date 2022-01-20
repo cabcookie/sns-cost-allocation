@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.3](https://github.com/cabcookie/sns-cost-allocation/compare/v0.0.2...v0.0.3) (2022-01-20)
+
+
+### Features
+
+* exploring SNS AWS SDK capabilities ([eecc837](https://github.com/cabcookie/sns-cost-allocation/commit/eecc8377f1de4777c388cc4fb05a488883c6957f))
+
 ### 0.0.2 (2022-01-20)
 
 
