@@ -1,7 +1,6 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { CodePipeline, CodePipelineSource, ShellStep } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
-import repository from '../secrets/repository';
 
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
@@ -12,7 +11,7 @@ export class SnsCostAllocationStack extends Stack {
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'SnsCostAllocation',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub(repository, 'main'),
+        input: CodePipelineSource.gitHub('cabcookie/sns-cost-allocation', 'main'),
         commands: [
           'npm ci',
           'npm run build',
