@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.1...v0.1.2) (2022-01-20)
+
+
+### Features
+
+* CDK start all over ([e4090f3](https://github.com/cabcookie/sns-cost-allocation/commit/e4090f3d84fa8efd2d687a9713629f09c2c31f4b))
+
 ### [0.1.1](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.0...v0.1.1) (2022-01-20)
 
 
