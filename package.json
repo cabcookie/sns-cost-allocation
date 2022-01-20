@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/cabcookie/sns-cost-allocation#readme",
   "dependencies": {
+    "aws-sdk": "^2.1060.0",
     "standard-version": "^9.3.2"
   }
 }
