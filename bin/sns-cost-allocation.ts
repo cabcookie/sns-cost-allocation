@@ -1,12 +1,10 @@
 #!/usr/bin/env node
-import 'source-map-support/register';
-import { App } from 'aws-cdk-lib';
+// import 'source-map-support/register';
+import * as cdk from 'aws-cdk-lib';
 import { SnsCostAllocationStack } from '../lib/sns-cost-allocation-stack';
-import environment from '../secrets/environment';
+import awsEnvironment from '../secrets/aws-environment';
 
-const app = new App();
+const app = new cdk.App();
 new SnsCostAllocationStack(app, 'SnsCostAllocationStack', {
-  env: environment,
+  env: awsEnvironment,
 });
-
-app.synth();
