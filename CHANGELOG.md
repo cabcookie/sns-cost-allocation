@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.1](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.0...v0.1.1) (2022-01-20)
+
+
+### Features
+
+* deploy a pipeline ([28e51e3](https://github.com/cabcookie/sns-cost-allocation/commit/28e51e3b484ceaf8a1273f010ff892ac3971e18e))
+
 ## [0.1.0](https://github.com/cabcookie/sns-cost-allocation/compare/v0.0.3...v0.1.0) (2022-01-20)
 
 
