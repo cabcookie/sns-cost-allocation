@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.3...v0.1.4) (2022-01-20)
+
+
+### Features
+
+* adding a Lambda ([386fbb1](https://github.com/cabcookie/sns-cost-allocation/commit/386fbb17b46581e70597063f19be47c0e1489f70))
+
 ### [0.1.3](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.2...v0.1.3) (2022-01-20)
 
 
