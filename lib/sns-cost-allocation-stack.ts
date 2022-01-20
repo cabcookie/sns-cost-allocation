@@ -1,6 +1,7 @@
 import { Stack, StackProps } from 'aws-cdk-lib';
 import { CodePipeline, CodePipelineSource, ShellStep } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
+import { PipelineAppStage } from './pipeline-app-stage';
 
 // import * as sqs from 'aws-cdk-lib/aws-sqs';
 
@@ -19,5 +20,12 @@ export class SnsCostAllocationStack extends Stack {
         ],
       }),
     });
+
+    const stage = pipeline.addStage(new PipelineAppStage(this, "test", {
+      env: {
+        account: '711568858726',
+        region: 'eu-west-1',
+      },
+    }));
   }
 }
