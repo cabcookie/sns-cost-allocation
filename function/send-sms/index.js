@@ -1,4 +1,4 @@
-import { SNSClient, PublishCommand } from '@aws-sdk/client-sns';
+const { SNSClient, PublishCommand } = require('@aws-sdk/client-sns');
 
 exports.handler = async (event) => {
   const sns = new SNSClient(process.env.REGION || 'us-east-1');
@@ -16,6 +16,7 @@ exports.handler = async (event) => {
     headers: { "Content-Type": "text/json" },
     body: JSON.stringify({
       message: "Hello from my Lambda function",
+      event,
     })
   }
 }
