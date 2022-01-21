@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.11](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.10...v0.1.11) (2022-01-21)
+
+
+### Bug Fixes
+
+* handler file name ([c1184c8](https://github.com/cabcookie/sns-cost-allocation/commit/c1184c8d239ef52ebd53fa96ca4a2bb61dc86205))
+* Lambda code wasn't pushed ([a989903](https://github.com/cabcookie/sns-cost-allocation/commit/a989903b340fd557eaeabf12fdedd11938df85b3))
+
 ### [0.1.10](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.9...v0.1.10) (2022-01-21)
 
 
