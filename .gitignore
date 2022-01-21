@@ -8,4 +8,4 @@ node_modules
 cdk.out
 
 # Secrets
-secrets/*
+cdk.context.json
