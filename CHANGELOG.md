@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.8](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.7...v0.1.8) (2022-01-21)
+
+
+### Bug Fixes
+
+* SSM Parameter Store doesn't work either ([1479453](https://github.com/cabcookie/sns-cost-allocation/commit/1479453af2769fc51120ced64041c7e7c8756d4b))
+
 ### [0.1.7](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.6...v0.1.7) (2022-01-21)
 
 
