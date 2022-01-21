@@ -8,7 +8,7 @@ node_modules
 cdk.out
 
 # Lambda apps
-!app/src/**/*.js
+!function/*/*.js
 
 # Secrets
 cdk.context.json
