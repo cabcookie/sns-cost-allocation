@@ -23,7 +23,7 @@ export class HandleSnsSmsMessages extends Stack {
       handler: 'index.handler',
       timeout: Duration.seconds(15),
       memorySize: 1024,
-      code: Code.fromAsset('app'),
+      code: Code.fromAsset('function/send-sms'),
       environment: {
         PHONE_NUMBER: phoneNumber.secretValueFromJson('phoneNumber').toString(),
         REGION: this.region,
