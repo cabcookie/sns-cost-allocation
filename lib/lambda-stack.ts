@@ -19,6 +19,7 @@ export class HandleSnsSmsMessages extends Stack {
     });
 
     const sendSmsAndRecordCaller = new Function(this, 'SendSmsAndRecordCaller', {
+      functionName: 'sendSmsAndRecordCaller',
       runtime: Runtime.NODEJS_14_X,
       handler: 'index.handler',
       timeout: Duration.seconds(15),
