@@ -1,5 +1,6 @@
 import { CfnOutput, Duration, Stack, StackProps } from "aws-cdk-lib";
-import { Code, Function, Runtime } from "aws-cdk-lib/aws-lambda";
+import { Runtime } from "aws-cdk-lib/aws-lambda";
+import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
 import { Secret } from "aws-cdk-lib/aws-secretsmanager";
 import { Topic } from "aws-cdk-lib/aws-sns";
 import { LambdaSubscription } from "aws-cdk-lib/aws-sns-subscriptions";
@@ -18,13 +19,14 @@ export class HandleSnsSmsMessages extends Stack {
       displayName: "Request a short message delivery",
     });
 
-    const sendSmsAndRecordCaller = new Function(this, 'SendSmsAndRecordCaller', {
+    const sendSmsAndRecordCaller = new NodejsFunction(this, 'SendSmsAndRecordCaller', {
       functionName: 'sendSmsAndRecordCaller',
       runtime: Runtime.NODEJS_14_X,
       handler: 'index.handler',
       timeout: Duration.seconds(15),
       memorySize: 1024,
-      code: Code.fromAsset('function/send-sms'),
+      entry: './function/send-sms/index.ts',
+      // code: Code.fromAsset('function/send-sms'),
       environment: {
         PHONE_NUMBER: phoneNumber.secretValueFromJson('phoneNumber').toString(),
         REGION: this.region,
