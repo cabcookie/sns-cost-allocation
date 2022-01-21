@@ -10,17 +10,7 @@ You need to manually create secrets within [AWS Secrets Manager](https://console
 
 - `github-token` – Create a developer token with permissions for creating hooks.
 
-You need to manually create parameters within [AWS Systems Manager Parameter Store](https://console.aws.amazon.com/systems-manager/parameters/), as this stack is looking for them:
-
-- `/sns-cost-allocation/github-repo` – Create a developer token with permissions for creating hooks.
-- `/sns-cost-allocation/environments/pipeline/account` – The AWS Account ID for the pipeline.
-- `/sns-cost-allocation/environments/development/account` – The AWS Account ID where the pipeline should create the resources in the development account.
-- `/sns-cost-allocation/environments/production/account` – The AWS Account ID where the pipeline should create the resources in the production account.
-- `/sns-cost-allocation/environments/pipeline/region` – The AWS Region for the pipeline.
-- `/sns-cost-allocation/environments/development/region` – The AWS Region where the pipeline should create the resources in the development account.
-- `/sns-cost-allocation/environments/production/region` – The AWS Region where the pipeline should create the resources in the production account.
-
-Before CDK can deploy resources in those accounts, you need to run the following statements in your above mentioned environments:
+Before CDK can deploy resources in those accounts, you need to run the following statements in your environments for the pipeline, your dev environment, and your production environment:
 
 ```bash
 export CDK_NEW_BOOTSTRAP=1 
