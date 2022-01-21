@@ -2,20 +2,15 @@ import { Stack, StackProps } from 'aws-cdk-lib';
 import { CodePipeline, CodePipelineSource, ShellStep } from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
 import { PipelineAppStage } from './pipeline-app-stage';
-import { StringParameter } from 'aws-cdk-lib/aws-ssm';
 
 export class SnsCostAllocationStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const parameterName = '/sns-cost-allocation/github-repo';
-    StringParameter.valueFromLookup(this, parameterName);
-    const githubRepo = this.node.tryGetContext(`ssm:account=${props?.env?.account}:parameterName=${parameterName}:region=${props?.env?.region}`);
-
     const pipeline = new CodePipeline(this, 'Pipeline', {
       pipelineName: 'SnsCostAllocation',
       synth: new ShellStep('Synth', {
-        input: CodePipelineSource.gitHub(githubRepo, 'main'),
+        input: CodePipelineSource.gitHub('cabcookie/sns-cost-allocation', 'main'),
         commands: [
           'npm ci',
           'npm run build',
