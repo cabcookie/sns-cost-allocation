@@ -2,7 +2,7 @@
   "name": "send-sms-lampda",
   "version": "0.0.1",
   "description": "Sends an SMS from a Lambda function",
-  "main": "send-sms.js",
+  "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

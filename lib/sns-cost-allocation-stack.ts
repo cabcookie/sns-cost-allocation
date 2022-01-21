@@ -7,7 +7,7 @@ export class SnsCostAllocationStack extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
-    const pipeline = new CodePipeline(this, 'Pipeline', {
+    const pipeline = new CodePipeline(this, 'SnsCostAllocationPipeline', {
       pipelineName: 'SnsCostAllocation',
       synth: new ShellStep('Synth', {
         input: CodePipelineSource.gitHub('cabcookie/sns-cost-allocation', 'main'),
@@ -19,6 +19,6 @@ export class SnsCostAllocationStack extends Stack {
       }),
     });
 
-    const stage = pipeline.addStage(new PipelineAppStage(this, "test"));
+    const stage = pipeline.addStage(new PipelineAppStage(this, "LambdaToSendSms"));
   }
 }
