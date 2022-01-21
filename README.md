@@ -55,8 +55,8 @@ var params = {
 2022-01-21T19:36:19.995Z	e4230523-7b5b-433b-8f91-2c68b9cb5125	INFO	{
   Message: 'Hello dear customer, I am happy to remind you about your upcoming reservation.',
   Caller: 'RemindCustomerAboutUpcomingReservation',
-  MessageId: 'xyz-xyz',
-  PhoneNumber: '+49123...'
+  MessageId: '3b00b4e6-6eb3-5187-8045-ee837bdaccd0',
+  PhoneNumber: '+491...'
 }
 ```
 
@@ -65,34 +65,22 @@ var params = {
 You need to manually create secrets within [AWS Secrets Manager](https://console.aws.amazon.com/secretsmanager/home?/listSecrets/), as this stack is looking for them:
 
 - `github-token` – Create a developer token with permissions for creating hooks.
-- `myPersonalIdentifiableInformation` – Store a default number with secret key `phoneNumber`.
+- `myPersonalIdentifiableInformation` – Store a default number with secret key `phoneNumber`. This will be used for testing purposes.
 
-Before CDK can deploy resources in those accounts, you need to run the following statements in your environments for the pipeline, your dev environment, and your production environment:
+If your account is in the SMS sandbox (i.e., check the *[Account Information](https://console.aws.amazon.com/sns/v3/home?%2Fmobile%2Ftext-messaging=&#/mobile/text-messaging)*), then add the `phoneNumber` from `myPersonalIdentifiableInformation` to the *Sandbox destination phone numbers*.
+
+Before CDK can deploy resources in your account, you need to run the following statements in your environment:
 
 ```bash
 export CDK_NEW_BOOTSTRAP=1 
-npx cdk bootstrap aws://[PIPELINE-ACCOUNT-ID]/[REGION] \
-    --profile PIPELINE-PROFILE \
+npx cdk bootstrap aws://[ACCOUNT-ID]/[REGION] \
+    --profile ADMIN-PROFILE \
     --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess
 ```
 
 **--cloudformation-execution-policies** specifies the ARN of a policy under which future CDK Pipelines deployments will execute. The default `AdministratorAccess` policy ensures that your pipeline can deploy every type of AWS resource. If you use this policy, make sure you trust all the code and dependencies that make up your AWS CDK app.
 
 Most organizations mandate stricter controls on what kinds of resources can be deployed by automation. Check with the appropriate department within your organization to determine the policy your pipeline should use.
-
-```bash
-export CDK_NEW_BOOTSTRAP=1 
-npx cdk bootstrap aws://[DEVELOPMENT-ACCOUNT-ID]/[REGION] \
-    --profile DEV-PROFILE \
-    --trust [PIPELINE-ACCOUNT-ID]
-```
-
-```bash
-export CDK_NEW_BOOTSTRAP=1 
-npx cdk bootstrap aws://[PRODUCTION-ACCOUNT-ID]/[REGION] \
-    --profile PROD-PROFILE \
-    --trust [PIPELINE-ACCOUNT-ID]
-```
 
 ## Get Started
 
