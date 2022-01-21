@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.17](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.16...v0.1.17) (2022-01-21)
+
+
+### Bug Fixes
+
+* trying again with NodejsFunction ([7fe6961](https://github.com/cabcookie/sns-cost-allocation/commit/7fe69612c47e3ce07a2ea210d8ad1aceba9dabb0))
+
 ### [0.1.16](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.15...v0.1.16) (2022-01-21)
 
 
