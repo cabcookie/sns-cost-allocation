@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.16](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.15...v0.1.16) (2022-01-21)
+
+
+### Bug Fixes
+
+* adding a shell step in pipeline ([4fc649b](https://github.com/cabcookie/sns-cost-allocation/commit/4fc649b15be0bbeaa0ce01dec6ae909f1098e0d4))
+* adjusting scripts ([9df95e9](https://github.com/cabcookie/sns-cost-allocation/commit/9df95e960a3748ea83e453e8bc0b55d594f23c6f))
+* require instead of import in Lambda ([85feb2f](https://github.com/cabcookie/sns-cost-allocation/commit/85feb2f75327f9ffbf8faa67d40fea02e1c3cad3))
+
 ### [0.1.15](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.14...v0.1.15) (2022-01-21)
 
 
