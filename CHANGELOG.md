@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.25](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.24...v0.1.25) (2022-01-21)
+
+
+### Bug Fixes
+
+* accepting only one SNS message now ([06bdcb5](https://github.com/cabcookie/sns-cost-allocation/commit/06bdcb54aa3e9218a117f0b932af05aad8b7f0c9))
+
 ### [0.1.24](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.23...v0.1.24) (2022-01-21)
 
 
