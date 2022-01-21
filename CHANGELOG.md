@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.20](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.19...v0.1.20) (2022-01-21)
+
+
+### Bug Fixes
+
+* give Lambda permission to send SMS ([fa68d88](https://github.com/cabcookie/sns-cost-allocation/commit/fa68d88d56f6b5df5c24dcddd6903dfccd88a477))
+
 ### [0.1.19](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.18...v0.1.19) (2022-01-21)
 
 
