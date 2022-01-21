@@ -1,0 +1,7 @@
+{
+  "Records": [{
+    "Message": "This is a test message",
+    "Subject": "+4912345678012",
+    "Type": "Test"
+  }]
+}
