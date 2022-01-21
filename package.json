@@ -27,7 +27,8 @@
     "cdk": "cdk",
     "push": "git push --follow-tags origin main",
     "release": "standard-version",
-    "major-release": "standard-version --release-as major"
+    "major-release": "standard-version --release-as major",
+    "publish": "npm run release && npm run push"
   },
   "devDependencies": {
     "@types/jest": "^26.0.10",
