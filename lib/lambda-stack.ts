@@ -14,7 +14,7 @@ export class LambdaStack extends Stack {
 
     new Function(this, 'LambdaFunction', {
       runtime: Runtime.NODEJS_12_X,
-      handler: 'send-sms.handler',
+      handler: 'index.handler',
       code: Code.fromAsset('app'),
       environment: {
         PHONE_NUMBER: phoneNumber.secretValueFromJson('phoneNumber').toString(),
