@@ -13,37 +13,30 @@ exports.handler = async (event: SNSEvent) => {
     region: process.env.REGION || 'us-east-1',
   });
 
-  const records: SmsMessage[] = event.Records.map(record => {
-    const { Message, MessageId } = record.Sns;
-    const smsMessage: SmsMessage = JSON.parse(Message);
-    smsMessage.MessageId = MessageId;
-    if (!smsMessage.PhoneNumber) {
-      smsMessage.PhoneNumber = process.env.PHONE_NUMBER;
-    }
-    return smsMessage;
-  });
+  const { Message, MessageId } = event.Records[0].Sns;
+  const smsMessage: SmsMessage = JSON.parse(Message);
+  smsMessage.MessageId = MessageId;
+  if (!smsMessage.PhoneNumber) {
+    smsMessage.PhoneNumber = process.env.PHONE_NUMBER;
+  }
+  const publishCommand = new PublishCommand({
+    Message: smsMessage.Message,
+    PhoneNumber: smsMessage.PhoneNumber,
+  })
+  await sns.send(publishCommand);
 
-  await records.forEach(async (smsMessage) => {
-    const publishCommand = new PublishCommand({
-      Message: smsMessage.Message,
-      PhoneNumber: smsMessage.PhoneNumber,
-    })
-    await sns.send(publishCommand);
-    console.log({
-      ...smsMessage,
-      PhoneNumber: smsMessage.PhoneNumber?.substring(0,4) + '...',
-    });
-  });
-
-  const responseBody = {
-    message: "Successfully sent messages.",
-    event: JSON.stringify(event),
+  const logMessage = {
+    ...smsMessage,
+    PhoneNumber: smsMessage.PhoneNumber?.substring(0,4) + '...',
   };
-  // console.log(responseBody);
+  console.log(logMessage);
 
   return {
     statusCode: 200,
     headers: { "Content-Type": "text/json" },
-    body: JSON.stringify(responseBody),
+    body: JSON.stringify({
+      message: "Successfully sent messages.",
+      event: logMessage,
+    }),
   }
 }
