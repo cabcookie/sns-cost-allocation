@@ -1,13 +1,21 @@
-const { SNSClient, PublishCommand } = require('@aws-sdk/client-sns');
+// const { SNSClient, PublishCommand } = require('@aws-sdk/client-sns');
 
-exports.handler = async (_event) => {
-  const sns = new SNSClient(process.env.REGION);
-  const phoneNumber = process.env.PHONE_NUMBER;
+exports.handler = async (event) => {
+  // const sns = new SNSClient(process.env.REGION);
+  // const phoneNumber = process.env.PHONE_NUMBER;
 
-  const publishCommand = new PublishCommand({
-    Message: "This is a test message",
-    PhoneNumber: phoneNumber,
-  })
+  // const publishCommand = new PublishCommand({
+  //   Message: "This is a test message",
+  //   PhoneNumber: phoneNumber,
+  // })
 
-  await sns.send(publishCommand);
+  // await sns.send(publishCommand);
+
+  return {
+    statusCode: 200,
+    headers: { "Content-Type": "text/json" },
+    body: JSON.stringify({
+      message: "Hello from my Lambda function",
+    })
+  }
 }
