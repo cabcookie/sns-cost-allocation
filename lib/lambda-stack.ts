@@ -1,4 +1,5 @@
 import { CfnOutput, Duration, Stack, StackProps } from "aws-cdk-lib";
+import { Effect, PolicyStatement } from "aws-cdk-lib/aws-iam";
 import { Runtime } from "aws-cdk-lib/aws-lambda";
 import { NodejsFunction } from "aws-cdk-lib/aws-lambda-nodejs";
 import { Secret } from "aws-cdk-lib/aws-secretsmanager";
@@ -35,6 +36,11 @@ export class HandleSnsSmsMessages extends Stack {
         REGION: this.region,
       }
     });
+
+    sendSmsAndRecordCaller.addToRolePolicy(new PolicyStatement({
+      effect: Effect.ALLOW,
+      actions: ['sns:Publish'],
+    }));
 
     topic.addSubscription(new LambdaSubscription(sendSmsAndRecordCaller));
 
