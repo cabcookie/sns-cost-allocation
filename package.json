@@ -1,6 +1,6 @@
 {
   "name": "sns-cost-allocation",
-  "version": "0.1.18",
+  "version": "0.1.19",
   "description": "Build a solution to allocate costs for text messages to callers.",
   "bin": {
     "sns-cost-allocation": "bin/sns-cost-allocation.js"
