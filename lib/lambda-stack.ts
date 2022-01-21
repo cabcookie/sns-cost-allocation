@@ -40,6 +40,7 @@ export class HandleSnsSmsMessages extends Stack {
     sendSmsAndRecordCaller.addToRolePolicy(new PolicyStatement({
       effect: Effect.ALLOW,
       actions: ['sns:Publish'],
+      resources: ['*'],
     }));
 
     topic.addSubscription(new LambdaSubscription(sendSmsAndRecordCaller));
