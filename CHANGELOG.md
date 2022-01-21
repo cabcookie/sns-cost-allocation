@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.15](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.14...v0.1.15) (2022-01-21)
+
+
+### Features
+
+* does the Lambda send an SMS now? ([d56ab15](https://github.com/cabcookie/sns-cost-allocation/commit/d56ab150c32f8ea6f9ebf96812193e93a436ae0b))
+
+
+### Bug Fixes
+
+* adding a Lambda test event ([f5cd440](https://github.com/cabcookie/sns-cost-allocation/commit/f5cd44087129d4ead1adb83815c089b732357df4))
+* give Lambda function a name ([4928c8b](https://github.com/cabcookie/sns-cost-allocation/commit/4928c8b7d6d0d9dc797c78328807a554d9e00110))
+* README still referred to SSM Parameter Store ([43647f2](https://github.com/cabcookie/sns-cost-allocation/commit/43647f250f3c5beca35fe6d1a1bac5563b0d9b6f))
+
 ### [0.1.14](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.13...v0.1.14) (2022-01-21)
 
 
