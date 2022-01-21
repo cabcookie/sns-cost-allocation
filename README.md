@@ -2,7 +2,40 @@
 
 Build a solution to allocate costs for text messages to callers.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+Usually, if you want to send a text message you call SNS like follows:
+
+```js
+var AWS = require('aws-sdk');
+AWS.config.update({region: 'REGION'});
+
+var params = {
+  Message: 'TEXT_MESSAGE',
+  PhoneNumber: 'E.164_PHONE_NUMBER',
+};
+
+new AWS.SNS({apiVersion: '2010-03-31'}).publish(params);
+```
+
+However, doing this, you have no chance to allocate costs for sending text messages to the caller.
+This code example shows you how to send your request to an SNS Topic instead and a Lambda function handles the request, sends the message and records the caller. Thus, if you match the logs of the Lambda with your cost and usage reports, you have a chance to allocate the costs to the consumer of the service.
+
+You would then call the topic as follows:
+
+```js
+var AWS = require('aws-sdk');
+AWS.config.update({region: 'REGION'});
+
+var params = {
+  Message: JSON.stringify({
+    Message: 'TEXT_MESSAGE',
+    PhoneNumber: 'E.164_PHONE_NUMBER',
+    Caller: 'WHO_AM_I',
+  }),
+  Topic: 'TOPIC_ARN'
+};
+
+new AWS.SNS({apiVersion: '2010-03-31'}).publish(params);
+```
 
 ## Preparation
 
