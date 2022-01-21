@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.21](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.20...v0.1.21) (2022-01-21)
+
+
+### Bug Fixes
+
+* added resource `'*'` to policy ([f095c54](https://github.com/cabcookie/sns-cost-allocation/commit/f095c54e350055da63d43f5249631759453c4cd3))
+
 ### [0.1.20](https://github.com/cabcookie/sns-cost-allocation/compare/v0.1.19...v0.1.20) (2022-01-21)
 
 
