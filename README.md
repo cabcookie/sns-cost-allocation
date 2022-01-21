@@ -37,11 +37,35 @@ var params = {
 new AWS.SNS({apiVersion: '2010-03-31'}).publish(params);
 ```
 
+If you then send a message like the following: 
+
+```js
+var params = {
+  Message: JSON.stringify({
+    Message: 'Hello dear customer, I am happy to remind you about your upcoming reservation.',
+    Caller: 'RemindCustomerAboutUpcomingReservation',
+  }),
+  Topic: 'TOPIC_ARN'
+};
+```
+
+... you will find the following information in the CloudWatch logs of the Lambda function:
+
+```
+2022-01-21T19:36:19.995Z	e4230523-7b5b-433b-8f91-2c68b9cb5125	INFO	{
+  Message: 'Hello dear customer, I am happy to remind you about your upcoming reservation.',
+  Caller: 'RemindCustomerAboutUpcomingReservation',
+  MessageId: 'xyz-xyz',
+  PhoneNumber: '+49123...'
+}
+```
+
 ## Preparation
 
 You need to manually create secrets within [AWS Secrets Manager](https://console.aws.amazon.com/secretsmanager/home?/listSecrets/), as this stack is looking for them:
 
 - `github-token` – Create a developer token with permissions for creating hooks.
+- `myPersonalIdentifiableInformation` – Store a default number with secret key `phoneNumber`.
 
 Before CDK can deploy resources in those accounts, you need to run the following statements in your environments for the pipeline, your dev environment, and your production environment:
 

@@ -23,20 +23,23 @@ exports.handler = async (event: SNSEvent) => {
     return smsMessage;
   });
 
-  records.forEach(async (smsMessage) => {
+  await records.forEach(async (smsMessage) => {
     const publishCommand = new PublishCommand({
       Message: smsMessage.Message,
       PhoneNumber: smsMessage.PhoneNumber,
     })
     await sns.send(publishCommand);
-    console.log(smsMessage);
+    console.log({
+      ...smsMessage,
+      PhoneNumber: smsMessage.PhoneNumber?.substring(0,4) + '...',
+    });
   });
 
   const responseBody = {
     message: "Successfully sent messages.",
     event: JSON.stringify(event),
   };
-  console.log(responseBody);
+  // console.log(responseBody);
 
   return {
     statusCode: 200,

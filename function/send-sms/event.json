@@ -1,0 +1,8 @@
+{
+  "Records": [{
+      "Sns": {
+        "MessageId": "SomeRandomId",
+        "Message": "{\"Message\":\"A random message I want to send\",\"Caller\":\"MainFunction\"}"
+      }
+  }]
+}
