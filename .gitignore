@@ -7,8 +7,5 @@ node_modules
 .cdk.staging
 cdk.out
 
-# Lambda apps
-!function/*/*.js
-
 # Secrets
 cdk.context.json

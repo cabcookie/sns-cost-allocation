@@ -2,7 +2,9 @@ import { PublishCommand, SNSClient } from "@aws-sdk/client-sns";
 import { SNSEvent } from "aws-lambda";
 
 exports.handler = async (event: SNSEvent) => {
-  const sns = new SNSClient(process.env.REGION || 'us-east-1');
+  const sns = new SNSClient({
+    region: process.env.REGION || 'us-east-1',
+  });
   const phoneNumber = process.env.PHONE_NUMBER;
 
   const publishCommand = new PublishCommand({

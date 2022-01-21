@@ -26,6 +26,9 @@ export class HandleSnsSmsMessages extends Stack {
       timeout: Duration.seconds(15),
       memorySize: 1024,
       entry: './function/send-sms/index.ts',
+      bundling: {
+        externalModules: ['aws-sdk'],
+      },
       // code: Code.fromAsset('function/send-sms'),
       environment: {
         PHONE_NUMBER: phoneNumber.secretValueFromJson('phoneNumber').toString(),
